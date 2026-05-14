@@ -1,0 +1,643 @@
+:root{
+    --color-fondo:#0f0818 ;
+    --morado-oscuro: #1a0a2e;
+    --morado-medio: #2d1254;
+    --morado-acento: #3d1a6e;
+    --morado-suave: #9b6cc7;
+    --dorado: #c9a84c;
+     --dorado-claro: #f0d080;
+    --texto: #f5eee8;
+    --texto-suave: rgba(245, 238, 232, 0.65);
+    --texto-sutil: rgba(245, 238, 232, 0.35);
+    --borde-dorado: rgba(201, 168, 76, 0.2);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--color-fondo);
+    color: var(--texto);
+    font-family: 'Jost', sans-serif;
+    overflow-x: hidden;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba(15, 8, 24, 0.95);
+    border-bottom: 0.5px solid var(--borde-dorado);
+   
+}
+
+.menu{
+    display: flex;
+    gap: 2.2rem;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+  
+}
+
+.menu li a{
+    text-decoration: none;
+    color: var(--texto-suave);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    transition: color 0.3s ;
+    text-transform: uppercase;
+}
+
+.menu li a:hover{
+    color: var(--dorado);
+}
+
+
+.nav button{
+    padding: 0.6rem 1.3rem;
+    border: 0.5px solid var(--borde-dorado);
+    color: var(--dorado);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav button:hover{
+    background-color: var(--dorado);
+    color: var(--color-fondo);
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dorado);
+}
+
+.logo span {
+    color: var(--texto);
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.8rem;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(15, 8, 24, 0.25) 0%,
+      rgba(15, 8, 24, 0.65) 55%,
+      rgba(15, 8, 24, 1.00) 100%
+    ),
+    url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.title{
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    margin-bottom: 1rem;
+}
+
+.hero h1{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.05;
+    color: #ffffff;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--dorado);
+}
+
+.hero p {
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+  line-height: 1.9;
+  font-weight: 300;
+  max-width: 420px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hero1, .hero2 {
+  border: none;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.hero1 {
+  background: var(--dorado);
+  padding: 0.95rem 2.5rem;
+}
+
+.hero1 a {
+  color: var(--color-fondo);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero2 {
+  background: transparent;
+  padding: 0.95rem 2rem;
+  border: 0.5px solid rgba(201, 168, 76, 0.45) !important;
+}
+
+.hero2 a {
+  color: var(--dorado);
+  text-decoration: none;
+}
+
+.spanh {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.5);
+  margin-top: 2rem;
+}
+
+.barra {
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--morado-oscuro), var(--morado-medio), var(--morado-oscuro));
+  padding: 0.8rem 0;
+  border-top: 0.5px solid var(--borde-dorado);
+  border-bottom: 0.5px solid var(--borde-dorado);
+}
+
+.barra-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 18s linear infinite;
+}
+
+.barra-track span {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.65);
+  margin: 0 1.8rem;
+}
+
+.barra-track .diam {
+  color: var(--dorado);
+  margin: 0 0.4rem;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.productos {
+  padding: 6rem 3rem;
+}
+
+.productos p:first-child {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--dorado);
+  margin-bottom: 0.8rem;
+}
+
+.productos h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.9rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 1.4rem;
+}
+
+.productos h2 em {
+  font-style: italic;
+  color: rgba(155, 108, 199, 0.9);
+}
+
+.gold-line {
+  width: 46px;
+  height: 0.5px;
+  background: var(--dorado);
+  margin-bottom: 3rem;
+}
+
+.tarjeta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  background: linear-gradient(160deg, var(--morado-oscuro), #230d42);
+  border: 0.5px solid var(--borde-dorado);
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 168, 76, 0.45);
+}
+
+.tarjeta img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.tarjeta:hover img {
+  transform: scale(1.05);
+}
+
+.tarjeta-info {
+  padding: 1.4rem 1.5rem 1.6rem;
+}
+
+.tarjeta .arriba {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--dorado);
+  color: var(--color-fondo);
+  font-weight: 500;
+  padding: 0.28rem 0.75rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.tarjeta .uno {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.6);
+  margin-bottom: 0.4rem;
+}
+
+.tarjeta h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta-info p {
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.tarjeta-info .arriba {
+  color: #0f0818 !important;
+  background: var(--dorado) !important;
+}
+
+.tarjeta h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--dorado);
+  margin-bottom: 1rem;
+}
+
+.tarjeta button {
+  background: transparent;
+  border: 0.5px solid var(--borde-dorado);
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.tarjeta button a {
+  color: var(--dorado);
+  text-decoration: none;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.tarjeta:hover button {
+  border-color: rgba(201, 168, 76, 0.6);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.servicios {
+  padding: 6rem 3rem;
+  background: linear-gradient(180deg, var(--morado-profundo), var(--morado-oscuro), var(--morado-profundo));
+}
+
+.servicios .arriba {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--dorado);
+  margin-bottom: 0.8rem;
+}
+
+.servicios h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.9rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 1.4rem;
+}
+
+.servicios h2 em {
+  font-style: italic;
+  color: rgba(155, 108, 199, 0.9);
+}
+
+.lista {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-top: 1rem;
+}
+
+.lista > div {
+  padding: 1.8rem 0;
+  border-bottom: 0.5px solid rgba(201, 168, 76, 0.1);
+  border-top: 0.5px solid rgba(201, 168, 76, 0.1);
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding-right: 3rem;
+  transition: padding-left 0.3s;
+}
+
+.lista > div:hover {
+  padding-left: 0.8rem;
+}
+
+.lista > div p:first-child {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: rgba(201, 168, 76, 0.22);
+  min-width: 2rem;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.lista > div:hover p:first-child {
+  color: rgba(201, 168, 76, 0.7);
+}
+
+.lista h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.lista p {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.contact-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(155, 108, 199, 0.8);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.contact-valor {
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.6);
+}
+
+.form-input,
+.form-textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid var(--borde-dorado);
+  padding: 0.85rem 1rem;
+  color: var(--texto);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  outline: none;
+  resize: none;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: rgba(201, 168, 76, 0.55);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(245, 238, 232, 0.25);
+}
+
+.formulario .btn-gold {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--dorado);
+  color: #0f0818;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.formulario .btn-gold:hover {
+  background: var(--dorado-claro);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.contacto {
+  padding: 6rem 3rem;
+  background: #0a0515;
+}
+
+.contact-info a {
+  color: var(--dorado);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 1.2rem;
+  transition: color 0.3s;
+}
+
+.contacto h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.9rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 1.4rem;
+}
+
+.contacto h2 em {
+  font-style: italic;
+  color: rgba(155, 108, 199, 0.9);
+}
+
+.contact-info a:hover {
+  color: var(--dorado-claro);
+}
+
+.contact-info .arriba {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.6);
+  margin-bottom: 0.3rem;
+  margin-top: 1rem;
+}
+
+footer {
+  background: #080312;
+  border-top: 0.5px solid var(--borde-dorado);
+  padding: 3rem 3rem 2rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--dorado);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+footer p {
+  font-size: 0.78rem;
+  color: var(--texto-sutil);
+  font-weight: 300;
+  line-height: 1.8;
+  max-width: 220px;
+}
+
+.footer-col-title {
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--dorado);
+  margin-bottom: 1rem;
+}
+
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-list a {
+  font-size: 0.8rem;
+  color: var(--texto-sutil);
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.3s;
+}
+
+.footer-list a:hover {
+  color: var(--dorado);
+}
+
+.final-footer {
+  border-top: 0.5px solid rgba(201, 168, 76, 0.08);
+  padding-top: 1.5rem;
+  font-size: 0.65rem;
+  color: rgba(245, 238, 232, 0.2);
+  letter-spacing: 0.1em;
+  max-width: 100%;
+}
