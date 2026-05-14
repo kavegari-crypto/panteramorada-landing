@@ -75,6 +75,11 @@ body{
     transition: background 0.3s, color 0.3s;
 }
 
+.nav button a {
+  text-decoration: none;
+  color: var(--morado-medio);
+}
+
 .nav button:hover{
     background-color: var(--dorado);
     color: var(--color-fondo);
