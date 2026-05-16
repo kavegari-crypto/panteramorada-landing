@@ -646,3 +646,70 @@ footer p {
   letter-spacing: 0.1em;
   max-width: 100%;
 }
+
+
+@media (max-width: 768px) {
+
+
+  .nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .nav button {
+    display: none;
+  }
+
+  .hero {
+    padding: 6rem 1.5rem 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+ 
+  .productos {
+    padding: 4rem 1.5rem;
+  }
+
+  .tarjeta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  
+  .servicios {
+    padding: 4rem 1.5rem;
+  }
+
+  .lista {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto {
+    padding: 4rem 1.5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+    footer {
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
