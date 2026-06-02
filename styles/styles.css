@@ -713,3 +713,74 @@ footer p {
     gap: 2rem;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* HAMBURGUESA */
+#menu-toggle {
+  display: none;
+}
+
+.hamburguesa {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 0.5rem;
+}
+
+.hamburguesa span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--dorado);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* cuando el checkbox está marcado — menú abierto */
+#menu-toggle:checked ~ .menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 8, 24, 0.98);
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  z-index: 998;
+}
+
+#menu-toggle:checked ~ .menu li a {
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+}
+
+/* animar la X cuando está abierto */
+#menu-toggle:checked ~ .hamburguesa span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+#menu-toggle:checked ~ .hamburguesa span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked ~ .hamburguesa span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ocultar hamburguesa en desktop */
+@media (min-width: 769px) {
+  .hamburguesa {
+    display: none;
+  }
+  #menu-toggle {
+    display: none;
+  }
+}
